@@ -12,3 +12,13 @@ function showHamburgerMenu() {
         menu.style.gridTemplateColumns = "1fr";
     }
 }
+
+function updateTime(){
+    const date = new Date();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const ido = document.querySelector("#ido");
+    ido.textContent = `${hours}:${minutes}`;
+}
+updateTime();
+setInterval(updateTime,300);
