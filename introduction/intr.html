@@ -1,12 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="script.js"></script>
-    <title>Document</title>
+    <title>Kezdőlap</title>
+    <link rel="stylesheet" href="../main/style.css">
+    <link rel="stylesheet" href="kepnezegeto.css">
+    <script src="../main/script.js" defer></script>
+    <script src="intr.js" defer></script>
+    
 </head>
 <body>
-    
+    <header>
+        <input type="button" value="☰" >
+        <div>
+            <span>Bemutatkozás</span>
+            <span>Kognitív Disszonancia</span>
+        </div>
+    </header>
+    <div id="menu">
+        <nav>
+            <ul>
+                <li><a href="introduction/index.html">Bemutatkozás</a></li>
+                <li>Tankolás</li>
+            </ul>
+        </nav>
+        <div>
+            <main>
+                <input type="button" id="bezaras" value="Bezárás" onclick="bezar()" >
+                <input type="button" id="gomb" value="Kép megnyitása" onclick="kovetkezoKep()">
+                <div id="kepnezegeto">
+                    <img id="kep" src="">
+                </div>
+            </main>
+            <footer>
+                valami
+            </footer>
+        </div>
+    </div>
 </body>
 </html>
