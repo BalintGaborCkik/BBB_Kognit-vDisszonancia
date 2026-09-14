@@ -5,7 +5,9 @@ function showHamburgerMenu() {
     console.log("Valami");
     const menu = document.querySelector("#menu");
     const hamburgerMenu = document.querySelector("nav");
-    if(hamburgerMenu.style.display ==="none"){
+    console.log(hamburgerMenu.style.display);
+    
+    if(hamburgerMenu.style.display ==="none" || hamburgerMenu.style.display ===""){
         hamburgerMenu.style.display = "block";
         menu.style.gridTemplateColumns = "1fr 9fr";
     }else{

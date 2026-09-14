@@ -29,7 +29,10 @@ ul{
 }
 #menu{
     display: grid;
-    grid-template-columns: 1fr 9fr;
+    grid-template-columns:9fr;
+}
+nav{
+    display: None;
 }
 #keret{
     height: 50px;
