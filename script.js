@@ -2,11 +2,8 @@ const hamburgerGomb = document.querySelector('input[type="button"]');
 hamburgerGomb.addEventListener("click",showHamburgerMenu);
 
 function showHamburgerMenu() {
-    console.log("Valami");
     const menu = document.querySelector("#menu");
     const hamburgerMenu = document.querySelector("nav");
-    console.log(hamburgerMenu.style.display);
-    
     if(hamburgerMenu.style.display ==="none" || hamburgerMenu.style.display ===""){
         hamburgerMenu.style.display = "block";
         menu.style.gridTemplateColumns = "1fr 9fr";
