@@ -2,6 +2,7 @@ const kepek = [
   "../Images/kep1.jpg",
   "../Images/kep2.jpg",
   "../Images/kep3.jpg",
+  "../Images/kep4.jpg"
 ];
 let kepIndex = 0;
 let megnyitva = false;
@@ -40,7 +41,7 @@ function bezar() {
 
 //--- btn ---
 
-btns = document.querySelectorAll(".container button");
+btns = document.querySelectorAll(".container_bemutatkozas button");
 
 function bemutatkozasMegjelenitese() {
   const next = this.nextElementSibling.nextElementSibling;

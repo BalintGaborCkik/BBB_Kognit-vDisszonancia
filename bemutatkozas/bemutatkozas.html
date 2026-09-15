@@ -35,21 +35,10 @@
 
       <div>
         <main>
-          <input type="button" id="bezaras" value="Bezárás" onclick="bezar()" />
-          <input
-            type="button"
-            id="gomb"
-            value="Kép megnyitása"
-            onclick="kovetkezoKep()"
-          />
-          <div id="kepnezegeto">
-            <img id="kep" src="" />
-          </div>
-
           <!-- -->
           <h1>Csapatunk tagjai</h1>
 
-          <div class="container">
+          <div class="container_bemutatkozas">
             <figure class="bemutatkozoKartya">
               <img src="../Images/Kriszti_hihi.png" alt="Kriszti 𝘩𝘪𝘩𝘪" />
               <figcaption>
@@ -91,14 +80,14 @@
 
           <h1>Felkészítő tanáraink</h1>
 
-          <div class="container">
+          <div class="container_bemutatkozas">
             <figure class="bemutatkozoKartya">
               <img src="../Images/Fnl.png" alt="Farkas Norbert" />
               <figcaption>
                 <span>Farkas Norbert</span>
                 <button class="btn">Info</button>
                 <br />
-                <span>Csodás felkészítő tanárunk, Fnl</span>
+                <span class="bemutatkozas">Csodás felkészítő tanárunk, Fnl</span>
               </figcaption>
             </figure>
 
@@ -108,9 +97,30 @@
                 <span>Szabó Emánuel</span>
                 <button class="btn">Info</button>
                 <br />
-                <span>Csodás felkészítő tanárunk, Emán</span>
+                <span class="bemutatkozas">Csodás felkészítő tanárunk, Emán</span>
               </figcaption>
             </figure>
+          </div>
+
+          <h1>Galéria</h1>
+          <h2>A képek megtekintéséhez nyomja meg a gombot:)</h2>
+
+          <div id="container_kepek">
+            <input
+              type="button"
+              id="bezaras"
+              value="Bezárás"
+              onclick="bezar()"
+            />
+            <input
+              type="button"
+              id="gomb"
+              value="Képek megnyitása"
+              onclick="kovetkezoKep()"
+            />
+            <div id="kepnezegeto">
+              <img id="kep" src="" />
+            </div>
           </div>
         </main>
         <footer>valami</footer>
