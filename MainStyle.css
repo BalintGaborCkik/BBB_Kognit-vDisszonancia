@@ -57,14 +57,22 @@ main{
 nav{
     display: none;
     background-color:var(--feher);
-    padding: 10px 0 0 10px;
+    position: fixed;
+    top: 6vh;
+    height: 88vh;
+    width: 160px;
+    z-index: 1;
 }
 ul{
     list-style-type: none;
-    padding: 5px 0 5px 0;
 }
 li{
+    margin: auto;
+    text-align: center;
     font-size: 1.5em;
+}
+.lathatatlan{
+    display: none;
 }
 :root {
     --feher: rgb(255, 196, 235);

@@ -106,33 +106,32 @@ footer {
   color: #1F150C;
 }
 
-#clockWithPlant {
-  z-index: 999;
-  position: fixed;
-  bottom: 5vh;
-  width: 180px;
-  right: 34px;
-}
-
-#fehercucc {
-  z-index: -1;
-  width: 140px;
-  height: 56px;
-  background-color: white;
-  position: fixed;
-  bottom: 6vh;
-  right: 59px;
-}
 
 #ido {
-  z-index: 1000;
-  position: fixed;
-  bottom: 2.3vh;
+  z-index: 0;
+  position: absolute;
   width: 180px;
-  right: 1px;
+  height: 180px;
+  right: 0px;
   font-size: 45px;
+  bottom: 5vh;
+  background-image:url(../Images/stickers/clock.png) ;
+  background-size: 180px;
+  background-repeat: no-repeat;
 }
-
+#fehercucc{
+  z-index: -1;
+  width: 104px;
+  height: 45px;
+  line-height: 45px;
+  background-color: white;
+  position: relative;
+  text-align: center;
+  color: black;
+  margin: auto;
+  right: 5px;
+  bottom: -115px;
+}
 #ceruzaCucc {
   font-size: 50px;
   color: #5e2f20;
