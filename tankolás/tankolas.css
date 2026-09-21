@@ -1,14 +1,3 @@
-input{
-    width: 100px;
-    height: 20px;
-    margin: auto;
-}
-.piros{
-    background-color: red;
-}
-.zold{
-    background-color: green;
-}
-.kek{
-    background-color: blue;
+label{
+    display: block;
 }
