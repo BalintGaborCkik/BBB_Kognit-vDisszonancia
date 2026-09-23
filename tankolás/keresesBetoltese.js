@@ -19,7 +19,7 @@ function kozteVan(akt,min,max) {
 for (const tank of tankolasok) {
     if(kozteVan(tank,keresesValue.min,keresesValue.max)){
         const p = document.createElement("p")
-        p.innerText = `ˇ${tank.year}.${tank.month}.${tank.day}.: ${tank.amount} ${tank.price}`
+        p.innerText = `ˇ${tank.year}.${tank.month}.${tank.day}.: ${tank.amount} liter ${tank.price} Ft`
         document.body.append(p);
     }
 }

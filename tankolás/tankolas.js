@@ -1,6 +1,7 @@
 const datum = document.querySelector("#datum");
 const menny = document.querySelector("#menny");
 const ar = document.querySelector("#ar");
+const ora = document.querySelector("#ora");
 
 const rogzites = document.querySelector("#rogzites form input[type='submit']");
 
@@ -12,23 +13,26 @@ kereses.addEventListener("click",datumKereses)
 const tankolasokLista = JSON.parse(localStorage.getItem("tankolasok"))||[];
 
 function feldolgozas(e) {
-    if(datum.value != '' && menny.value != '' && ar.value != ''){
+    if(datum.value != '' && menny.value != '' && ar.value != '' && ora.value != ''){
         e.preventDefault()
         const tank = {
             year: parseInt(datum.value.split('-')[0]),
             month: parseInt(datum.value.split('-')[1]),
             day: parseInt(datum.value.split('-')[2]),
             amount: parseInt(menny.value),
-            price: parseInt(ar.value)
+            price: parseInt(ar.value),
+            odo: parseInt(ora.value)
         }
         tankolasokLista.push(tank);
         datum.value = null;
         menny.value = null;
         ar.value = null;
+        ora.value = null;
         localStorage.setItem("tankolasok",JSON.stringify(tankolasokLista))
         console.log("Sikeres rögzítés");
         szamolasHonap();
-        datumKereses();
+        hatekonysagSzamolas();
+        datumKereses(e);
     }
 }
 
@@ -42,6 +46,43 @@ function szamolasHonap() {
             }
         }
         spans[i].innerText =`${sum} Ft`
+    }
+}
+
+function hatekonysagSzamolas() {
+    const ol = document.querySelector("#hatekonysag ol");
+    if(!ol) return;
+    ol.innerHTML = "";
+
+    const rendezett = [...tankolasokLista].sort((a,b)=>{
+        const aRendezoSzam = a.year*10000 + a.month*100 + a.day;
+        const bRendezoSzam = b.year*10000 + b.month*100 + b.day;
+        return aRendezoSzam - bRendezoSzam;
+    });
+
+    const szakaszok = [];
+    for(let i = 1; i<rendezett.length; i++){
+        const elozo = rendezett[i-1];
+        const aktualis = rendezett[i];
+        const km = aktualis.odo - elozo.odo;
+        const fogyasztott = aktualis.amount;
+        if(km > 0){
+            szakaszok.push({
+                elozo,
+                aktualis,
+                km,
+                fogyasztott,
+                atlagFogyasztas: fogyasztott / km * 100
+            });
+        }
+    }
+
+    szakaszok.sort((a,b)=>a.atlagFogyasztas - b.atlagFogyasztas);
+
+    for(const sz of szakaszok){
+        const li = document.createElement("li");
+        li.innerText = `${sz.elozo.year}.${sz.elozo.month}.${sz.elozo.day}. → ${sz.aktualis.year}.${sz.aktualis.month}.${sz.aktualis.day}.: ${sz.km} km, ${sz.fogyasztott} l, ${sz.atlagFogyasztas.toFixed(2)} l/100km`;
+        ol.append(li);
     }
 }
 
@@ -75,3 +116,4 @@ function datumKereses(e) {
     }
 }
 szamolasHonap()
+hatekonysagSzamolas()
