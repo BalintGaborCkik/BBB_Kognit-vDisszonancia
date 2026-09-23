@@ -9,8 +9,6 @@ body {
   padding: 0;
   margin: 0;
   background-image: url("../Images/bg1.jpg");
-  background-repeat: repeat-y;
-  background-size: cover;
   overflow-x: hidden;
 }
 
@@ -49,7 +47,6 @@ footer {
 main {
   position: relative;
   display: flex;
-  justify-content: center;
   flex: 1;
   padding-bottom: 4vh;
 }
