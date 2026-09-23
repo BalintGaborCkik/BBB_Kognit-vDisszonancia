@@ -5,6 +5,7 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #262626;
   font-size: 16px;
+  background-image: url('../Images/bg1.jpg');
 }
 
 h1 {
@@ -22,6 +23,13 @@ h2 {
   margin: 0;
   text-align: center;
   padding: 0 5% 3rem 5%;
+}
+
+#bigContainer {
+  margin: auto;
+  background-color: #fff;
+  width: 1450px;
+  background-image: linear-gradient(to top, #490a15, #b17e5fca);
 }
 
 .container_bemutatkozas {
@@ -63,6 +71,35 @@ h2 {
 .bemutatkozas {
   font-weight: 300;
   font-size: 0.8rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+  border-radius: 0px 0px 20px 20px;
+  position: fixed;
+  top: 0;
+  height: 6vh;
+  width: 100%;
+  padding: 0 10px 0 0;
+  grid-template: "header";
+  /* background-color: #C689C6; */
+  background-image: linear-gradient(to bottom, #e27e88, #fcc8bde3);
+}
+
+
+footer {
+  display: flex;
+  z-index: 998;
+  border-radius: 20px 20px 0px 0px;
+  position: fixed;
+  bottom: 0;
+  height: 6vh;
+  width: 100%;
+  padding: 0 10px 0 0;
+  /*background-color: #C689C6;*/
+  background-image: linear-gradient(to bottom,#fcc8bde3, #e27e88);
 }
 
 @media screen and (min-width: 701px) {
@@ -114,4 +151,5 @@ h2 {
 
 hr {
 	width: 60%;
+  margin: auto;
 }
