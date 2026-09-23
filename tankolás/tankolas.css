@@ -1,3 +1,14 @@
 label{
     display: block;
 }
+.tartalom{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: linear-gradient(to top, #490a15, #b17e5fe3);
+}
+.tartalom>div{
+    padding: 20px;
+    margin: 20px auto 20px auto;
+    background: linear-gradient(#edcbcb, #7c3235);
+    height: fit-content;
+}
