@@ -2,23 +2,76 @@ const datum = document.querySelector("#datum");
 const menny = document.querySelector("#menny");
 const ar = document.querySelector("#ar");
 
-const rogzites = document.querySelector("form input[type='submit']");
+const rogzites = document.querySelector("#rogzites form input[type='submit']");
 
 rogzites.addEventListener('click',feldolgozas);
 
-const tankolasok = document.getElementById("tankolasok")
-function feldolgozas(e) {
-    e.preventDefault()
-    console.log(datum.value);
-    console.log(menny.value);
-    console.log(ar.value);
-   
-    const li = document.createElement("li")
-    li.innerText = `${datum.value}: ${menny.value} liter, ${ar.value} Ft `
-    tankolasok.append(li);
+const kereses = document.querySelector("#kereses form>input")
+kereses.addEventListener("click",datumKereses)
 
-    datum.value = null;
-    menny.value = null;
-    ar.value = null;
-    console.log("Sikeres rögzítés");
+const tankolasokLista = JSON.parse(localStorage.getItem("tankolasok"))||[];
+
+function feldolgozas(e) {
+    if(datum.value != '' && menny.value != '' && ar.value != ''){
+        e.preventDefault()
+        const tank = {
+            year: parseInt(datum.value.split('-')[0]),
+            month: parseInt(datum.value.split('-')[1]),
+            day: parseInt(datum.value.split('-')[2]),
+            amount: parseInt(menny.value),
+            price: parseInt(ar.value)
+        }
+        tankolasokLista.push(tank);
+        datum.value = null;
+        menny.value = null;
+        ar.value = null;
+        localStorage.setItem("tankolasok",JSON.stringify(tankolasokLista))
+        console.log("Sikeres rögzítés");
+        szamolasHonap();
+        datumKereses();
+    }
 }
+
+function szamolasHonap() {
+    const spans = document.querySelectorAll("ul li span");
+    for (let i = 0; i<spans.length;i++) {
+        let sum = 0;
+        for (const tank of tankolasokLista) {
+            if(tank.month===i+1){
+                sum+= tank.price
+            }
+        }
+        spans[i].innerText =`${sum} Ft`
+    }
+}
+
+function datumKereses(e) {
+    const vars = document.querySelectorAll("#kereses form label input")
+    if(vars[0].value!='' && vars[1].value !=''){
+        e.preventDefault()
+        const min = {}
+        min.year = parseInt(vars[0].value.split('-')[0])
+        min.month = parseInt(vars[0].value.split('-')[1])
+        min.day = parseInt(vars[0].value.split('-')[2])
+
+        const max = {}
+        max.year = parseInt(vars[1].value.split('-')[0])
+        max.month = parseInt(vars[1].value.split('-')[1])
+        max.day = parseInt(vars[1].value.split('-')[2])
+
+        const iframe = document.querySelector("#kereses iframe")
+        if(iframe){
+            iframe.parentElement.removeChild(iframe);
+        }
+        const kParameter = {}
+        kParameter.min = min;
+        kParameter.max = max;
+        localStorage.setItem("kereses",JSON.stringify(kParameter));
+        
+        const newIFrame = document.createElement("iframe")
+        newIFrame.src = "kereses.html"
+        const resz = document.getElementById("kereses");
+        resz.append(newIFrame);
+    }
+}
+szamolasHonap()
