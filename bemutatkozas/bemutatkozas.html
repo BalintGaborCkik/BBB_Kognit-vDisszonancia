@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kezdőlap</title>
+    <title>Bemutatkozás</title>
 
     <link rel="stylesheet" href="../MainStyle.css" />
     <link rel="stylesheet" href="kepnezegeto.css" />
@@ -14,7 +14,6 @@
 
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="bemutatkozas.css" />
-    <title>Document</title>
   </head>
 
   <body>
@@ -35,6 +34,8 @@
 
       <!-- -->
 
+      
+      
       <main>
       <div id="bigContainer">
           <!-- -->
@@ -47,29 +48,30 @@
             </p>
           </div>
 
-          <hr>
+          <hr id="hr1">
 
-          <h1>Csapatunk tagjai</h1>
+          <h1 id="vilagosabbSzoveg">Csapatunk tagjai</h1>
+
 
           <div class="container_bemutatkozas">
             <figure class="bemutatkozoKartya">
               <img src="../Images/Kriszti_hihi.png" alt="Kriszti 𝘩𝘪𝘩𝘪" />
+              <span class="nev">Molnár Krisztina</span>
               <figcaption>
-                <span class="nev">Molnár Krisztina</span>
                 <button class="btn">Info</button>
                 <br />
                 <span class="bemutatkozas">
                   Sziasztok! Kriszti vagyok, szeretek sütni, főzni, szeretek
                   kreatív lenni, rajzolni és fura vagyok.:p A csapat logót én
                   alkottam meg o_o Nagyon szeretem a Rammsteint hihi
-                </span>
+                </span> 
               </figcaption>
             </figure>
 
             <figure class="bemutatkozoKartya">
               <img src="../Images/Kristof.png" alt="Kristóf" />
+              <span class="nev">Nagy Kristóf</span>
               <figcaption>
-                <span class="nev">Nagy Kristóf</span>
                 <button class="btn">Info</button>
                 <br />
                 <span class="bemutatkozas">Kristóf vagyok, 17 éves. Szeretek sütni legjobban, 
@@ -80,8 +82,8 @@
 
             <figure class="bemutatkozoKartya">
               <img src="../Images/Gabor.png" alt="Gábor" />
+              <span class="nev">Bálint Gábor</span>
               <figcaption>
-                <span class="nev">Bálint Gábor</span>
                 <button class="btn">Info</button>
                 <br />
                 <span class="bemutatkozas">
@@ -98,8 +100,8 @@
           <div class="container_bemutatkozas">
             <figure class="bemutatkozoKartya">
               <img src="../Images/Fnl.png" alt="Farkas Norbert" />
+              <span class="nev">Farkas Norbert</span>
               <figcaption>
-                <span>Farkas Norbert</span>
                 <button class="btn">Info</button>
                 <br />
                 <span class="bemutatkozas"
@@ -110,8 +112,8 @@
 
             <figure class="bemutatkozoKartya">
               <img src="../Images/Eman.png" alt="Szabó Emánuel" />
+              <span class="nev">Szabó Emánuel</span>
               <figcaption>
-                <span>Szabó Emánuel</span>
                 <button class="btn">Info</button>
                 <br />
                 <span class="bemutatkozas"
@@ -121,17 +123,18 @@
             </figure>
           </div>
 
-          <hr>
+          <hr id="hr2">
 
-          <h1 id="sotetbenLevoSzovegek">Galéria</h1>
-          <h2 id="sotetbenLevoSzovegek">A képek megtekintéséhez nyomja meg a gombot:)</h2>
+          <h1 class="sotetbenLevoSzovegek">Galéria</h1>
+          <h2 class="sotetbenLevoSzovegek">A képek megtekintéséhez nyomja meg a gombot:)</h2>
 
           <div id="container_kepek">
-            <input
+            <input 
               type="button"
               id="bezaras"
               value="Bezárás"
               onclick="bezar()"
+              class="btn"
             />
             <input
               type="button"
@@ -139,6 +142,7 @@
               value="Képek megnyitása"
               onclick="kovetkezoKep()"
               class="btn"
+              id="btnK"
             />
             <div id="kepnezegeto">
               <img id="kep" src="" />

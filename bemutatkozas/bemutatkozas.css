@@ -2,7 +2,7 @@
 body {
   background-color: #fff;
   font-family: "Montserrat", sans-serif;
-  color: #262626;
+  color: #532f2f;
   font-size: 16px;
   background-image: url('../Images/bg1.jpg');
 }
@@ -35,6 +35,7 @@ h2 {
 #bigContainer {
   padding: 20px 15px;
   width: 90%;
+  height: 2600px;
   min-width: 500px;
   max-width: 2000px;
   border-radius: 10px;
@@ -90,11 +91,6 @@ span.nev {
   font-weight: 700;
 }
 
-.bemutatkozas {
-  font-weight: 300;
-  font-size: 0.8rem;
-  padding: 5px;
-}
 
 header {
   font-family: 'Rubik Iso';
@@ -111,13 +107,22 @@ header {
   background-image: linear-gradient(to bottom, #e27e88, #fcc8bde3);
 }
 
-hr {
- border: 1px solid rgb(252, 252, 252);
+.szovegek {
+  font-family: "Rubik Iso";
+  font-size: clamp(1.2rem, 3vw, 2.5rem);
+}
+
+#hr1 {
+  border: 1px solid rgb(143, 67, 67);
+}
+
+#hr2 {
+  border: 1px solid rgb(131, 82, 82);
 }
 
 button, .btn {
-  width: 100px;
   height: 30px;
+  margin: 16px;
   background-image: linear-gradient(to bottom, #eddfdf, #cb8c8c);
   border-radius: .5rem;
   color: #482307;
@@ -125,16 +130,22 @@ button, .btn {
   font-size: 100%;
   font-family: 'Rubik Iso';
   transition: all .1s;
+  padding-inline: 20px;
 }
 
-button:active {
+button, .btn:active {
   background-color: #f3f4f6;
   box-shadow: -1px 2px 5px rgba(81,41,10,0.15),0px 1px 1px rgba(81,41,10,0.15);
   transform: translateY(0.125rem);
 }
 
-button:focus {
+button, .btn:focus {
   box-shadow: rgba(72, 35, 7, .46) 0 0 0 4px, -6px 8px 10px rgba(81,41,10,0.1), 0px 2px 2px rgba(81,41,10,0.2);
+}
+
+#btnK {
+  width: 50px;
+  height: 10px;
 }
 
 footer {
@@ -157,13 +168,23 @@ footer {
     height: auto;
     text-align: center;
   }
-
+  
   .szovegek {
     font-size: 1.2rem;
   }
-
+  
   header .szovegek {
     display: none;
+  }
+
+  #constainer_nyitoSzoveg {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1550px;
+    margin: 0 auto;
+    padding: 2rem 0;
   }
 }
 
@@ -177,7 +198,7 @@ footer {
 /* --- nyito szoveg --- */
 
 #constainer_nyitoSzoveg {
-	display: flex;
+  display: flex;
 	align-items: center;
 	justify-content: center;
 	max-width: 1550px;
@@ -186,21 +207,53 @@ footer {
 }
 
 #constainer_nyitoSzoveg img {
-	max-width: 250px;
+  max-width: 250px;
 }
 
 #nyitoSzoveg {
-	text-align: center;
+  text-align: center;
 	font-size: 2rem;
+  color: rgb(153, 50, 50);
+}
+
+#vilagosabbSzoveg {
+  color: rgb(136, 39, 39);
 }
 
 /* --- */
 
 hr {
-	width: 60%;
+  width: 60%;
   margin: auto;
 }
 
 .sotetbenLevoSzovegek {
-  color: #fff;
+  color: #9e7171;
+}
+/*
+.bemutatkozas {
+  font-weight: 300;
+  font-size: 0.8rem;
+  padding: 5px;
+}
+*/
+.bemutatkozas {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+.bemutatkozoKartya.aktiv .bemutatkozas {
+  display: block; 
+  opacity: 1;
+}
+
+.bemutatkozoKartya {
+  transition: transform 0.3s ease;
+}
+
+.bemutatkozoKartya.aktiv {
+  transform: translateY(-10px); 
 }

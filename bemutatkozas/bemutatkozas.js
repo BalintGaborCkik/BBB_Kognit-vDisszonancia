@@ -15,7 +15,7 @@ function kovetkezoKep() {
 
     document.getElementById("kep").src = kepek[kepIndex];
 
-    document.getElementById("gomb").value = "Következő kép";
+    document.getElementById("gomb").value = "Következő";
 
     megnyitva = true;
   } else {
@@ -44,13 +44,8 @@ function bezar() {
 btns = document.querySelectorAll(".container_bemutatkozas button");
 
 function bemutatkozasMegjelenitese() {
-  const next = this.nextElementSibling.nextElementSibling;
-
-  if (next.style.display === "none" || next.style.display === "") {
-      next.style.display = "inline";
-  } else {
-      next.style.display = "none";
-  }
+  const kartya = event.currentTarget.closest(".bemutatkozoKartya")
+  kartya.classList.toggle("aktiv");
 }
 
 for (let i = 0; i < btns.length; i++) {
