@@ -56,7 +56,6 @@ main{
 }
 nav{
     display: none;
-    background-color:var(--feher);
     position: fixed;
     top: 6vh;
     height: 88vh;
@@ -76,4 +75,51 @@ nav ul li{
 }
 :root {
     --feher: rgb(255, 196, 235);
+}
+
+
+
+
+nav{
+  background-color: #e27e88
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 15px 20px;
+
+    color: white;
+    text-decoration: none;
+
+    font-family: 'Iosevka Charon', sans-serif;
+    font-size: 20px;
+
+    background: transparent;
+
+    transition: background-color 0.2s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav ul li a:visited {
+    color: white;
+}
+
+nav ul li a:active {
+    color: white;
 }
