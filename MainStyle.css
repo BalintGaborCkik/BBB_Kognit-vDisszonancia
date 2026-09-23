@@ -65,7 +65,7 @@ nav{
 ul{
     list-style-type: none;
 }
-li{
+nav ul li{
     margin: auto;
     text-align: center;
     font-size: 1.5em;

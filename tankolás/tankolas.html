@@ -24,16 +24,41 @@
             </ul>
         </nav>
       <div class="tartalom">
-          <div>
+          <div id="rogzites">
                 <h2>Tankolás rögzítése</h2>
                 <form>
                     <label>Dátum: <input type="date" id="datum" required></label>
                     <label>Mennyiség: <input type="number" min="0.1" max="100" step="0.1" id="menny" required></label>
-                    <label>Ár: <input type="number" id="ar" required id="szábmit"></label>
+                    <label>Ár: <input type="number" id="ar" required></label>
+                    <label>Km/óra állás: <input type="number" id="ora"required></label>
                     <input type="submit" value="Rögzítés">
             </form>
           </div>
-          <ul id="tankolasok"></ul>
+          
+          <div id="honaposKoltes">
+                <h2>Hónapok szerinti költés</h2>
+               <ul>
+                    <li>Január: <span></span></li>
+                   <li>Február: <span></span></li>
+                   <li>Március: <span></span></li>
+                   <li>Április: <span></span></li>
+                   <li>Május: <span></span></li>
+                   <li>Június: <span></span></li>
+                   <li>Július: <span></span></li>
+                   <li>Augusztus: <span></span></li>
+                   <li>Szeptember: <span></span></li>
+                   <li>Obtóber: <span></span></li>
+                   <li>November: <span></span></li>
+                   <li>December: <span></span></li>
+               </ul>
+          </div>
+          <div id="kereses">
+            <form>
+                <label>Kezdődátum: <input type="date" required></label>
+                <label>Végsődátum: <input type="date" required></label>
+                <input type="submit" value="Keresés">
+            </form>
+          </div>
       </div>
    </main>
    <footer>
