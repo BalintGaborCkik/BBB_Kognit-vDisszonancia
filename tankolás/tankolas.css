@@ -11,4 +11,5 @@ label{
     margin: 20px auto 20px auto;
     background: linear-gradient(#edcbcb, #7c3235);
     height: fit-content;
+    border: solid snow 3px;
 }
