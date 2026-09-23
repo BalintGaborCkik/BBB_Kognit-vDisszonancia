@@ -1,11 +1,18 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,700");
-
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap");
 body {
   background-color: #fff;
   font-family: "Montserrat", sans-serif;
   color: #262626;
   font-size: 16px;
   background-image: url('../Images/bg1.jpg');
+}
+
+main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  padding-bottom: 4vh;
 }
 
 h1 {
@@ -26,10 +33,13 @@ h2 {
 }
 
 #bigContainer {
+  padding: 20px 15px;
+  width: 90%;
+  min-width: 500px;
+  max-width: 2000px;
+  border-radius: 10px;
   margin: auto;
-  background-color: #fff;
-  width: 1450px;
-  background-image: linear-gradient(to top, #490a15, #b17e5fca);
+  background-image: linear-gradient(to top, #490a15, #b17e5fe3);
 }
 
 .container_bemutatkozas {
@@ -44,24 +54,36 @@ h2 {
 .container_bemutatkozas figure {
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
-  background-color: #c55151;
-  height: 500px;
-  margin: 0;
-  padding: 0;
+  background: linear-gradient(#edcbcb, #7c3235);
+  height: 520px;
   position: relative;
   overflow: hidden;
+  max-width: 300px;
 }
 
 .container_bemutatkozas figure img {
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  padding: 12px;
   width: 100%;
+  max-width: 350px;
   height: 400px;
   object-fit: cover;
   opacity: 1;
   transition: opacity 0.5s;
 }
 
+figcaption {
+  display: flex;
+  text-align: center;
+}
+
 .container_bemutatkozas figure img:hover {
   opacity: 0.8;
+}
+
+span.nev {
+  margin: auto;
 }
 
 .nev {
@@ -71,25 +93,52 @@ h2 {
 .bemutatkozas {
   font-weight: 300;
   font-size: 0.8rem;
+  padding: 5px;
 }
 
 header {
+  font-family: 'Rubik Iso';
   display: flex;
   justify-content: space-between;
+  align-items: center;
   z-index: 999;
   border-radius: 0px 0px 20px 20px;
   position: fixed;
   top: 0;
-  height: 6vh;
+  min-height: 6vh;
   width: 100%;
-  padding: 0 10px 0 0;
-  grid-template: "header";
-  /* background-color: #C689C6; */
+  padding: 5px 15px;
   background-image: linear-gradient(to bottom, #e27e88, #fcc8bde3);
 }
 
+hr {
+ border: 1px solid rgb(252, 252, 252);
+}
+
+button, .btn {
+  width: 100px;
+  height: 30px;
+  background-image: linear-gradient(to bottom, #eddfdf, #cb8c8c);
+  border-radius: .5rem;
+  color: #482307;
+  cursor: pointer;
+  font-size: 100%;
+  font-family: 'Rubik Iso';
+  transition: all .1s;
+}
+
+button:active {
+  background-color: #f3f4f6;
+  box-shadow: -1px 2px 5px rgba(81,41,10,0.15),0px 1px 1px rgba(81,41,10,0.15);
+  transform: translateY(0.125rem);
+}
+
+button:focus {
+  box-shadow: rgba(72, 35, 7, .46) 0 0 0 4px, -6px 8px 10px rgba(81,41,10,0.1), 0px 2px 2px rgba(81,41,10,0.2);
+}
 
 footer {
+  font-family: 'Rubik Iso';
   display: flex;
   z-index: 998;
   border-radius: 20px 20px 0px 0px;
@@ -98,25 +147,23 @@ footer {
   height: 6vh;
   width: 100%;
   padding: 0 10px 0 0;
-  /*background-color: #C689C6;*/
   background-image: linear-gradient(to bottom,#fcc8bde3, #e27e88);
 }
 
-@media screen and (min-width: 701px) {
-  figure {
-    width: calc(33% - 0.5rem);
+@media (max-width: 768px) {
+  header,
+  footer {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
   }
-}
 
-@media screen and (max-width: 700px) {
-  figure {
-    width: calc(50% - 0.5rem);
+  .szovegek {
+    font-size: 1.2rem;
   }
-}
 
-@media screen and (max-width: 550px) {
-  figure {
-    width: 100%;
+  header .szovegek {
+    display: none;
   }
 }
 
@@ -152,4 +199,8 @@ footer {
 hr {
 	width: 60%;
   margin: auto;
+}
+
+.sotetbenLevoSzovegek {
+  color: #fff;
 }

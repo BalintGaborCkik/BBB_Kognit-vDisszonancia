@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="hu">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,58 +11,47 @@
   </head>
   <body>
     <header>
-        <input type="button" value="☰" >
+        <input type="button" value="☰" id="hamburgerBtn">
         <span class="szovegek">Kezdőlap</span>
         <span class="szovegek">Kognitív Disszonancia</span>
     </header>
-     
+
+    <nav>
+        <ul>
+            <li class="lathatatlan"><a href="../main/index.html">Kezdőlap</a></li>
+            <li><a href="../bemutatkozas/bemutatkozas.html">Bemutatkozás</a></li>
+            <li><a href="../tankolás/tankolas.html">Tankolás</a></li>
+        </ul>
+    </nav>
+
     <main>
-      <nav>
-          <ul>
-              <li class="lathatatlan"><a href="../main/index.html">Kezdőlap</a></li>
-              <li><a href="../bemutatkozas/bemutatkozas.html">Bemutatkozás</a></li>
-              <li><a href="../tankolás/tankolas.html">Tankolás</a></li>
-          </ul>
-      </nav>
-
-      <!--
-      <div id="stickers">
-        <img src="" alt="">
-      </div>
-      -->
-
-      <div id="container">
+      <div id="bigContainer">
         <div id="udv">
-          <p><i>UDVOZOLJOK AZ OLDALUNKON!</i></p>
+          <p><i>ÜDVÖZÖLJÜK AZ OLDALUNKON!</i></p>
           <img src="../Images/KozgazEpulet.jpg" alt="Iskolánk" id="udvHatter" />
         </div>
 
         <p id="ceruzaCucc">✎﹏﹏﹏﹏</p>
-
-        <img src="../Images/CsapatLogo_Atlatszo.png" alt="">
 
         <div id="szoveg">
           <p>
             "AI is neither true intelligence nor true creativity. It is an imitation of both, hollowed of meaning." (Curmudgeon Corner)
           </p>
         </div>
+        
+        <img src="../Images/CsapatLogo_Atlatszo.png" alt="Csapat logó" id="logo">
 
         <div id="cetlisSzoveg">
           <img src="../Images/stickers/cetli.png" alt="cetli" id="cetli"/>
         </div>
       </div>
-      <!-- ... -->
     </main>
 
-    
-    </main>
     <footer>
-      <p class="szovegek">Iskolánk honlapja: <a href="https://ckik.hu/">https://ckik.hu/</a></p>
-        <div id="ido">
-            <p id="fehercucc">ebbe van az idő</p>
-        </div>
-
+      <p class="szovegek">Iskolánk honlapja: <a href="https://ckik.hu/" target="_blank">https://ckik.hu/</a></p>
+      <div id="ido">
+          <p id="fehercucc"></p>
+      </div>
     </footer>
-    <main>
   </body>
 </html>

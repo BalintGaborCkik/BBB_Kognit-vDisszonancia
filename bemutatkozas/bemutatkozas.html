@@ -21,8 +21,8 @@
     <header>
       <input type="button" value="☰" />
       <div>
-        <span>Bemutatkozás</span>
-        <span>Kognitív Disszonancia</span>
+        <span class="szovegek">Bemutatkozás</span>
+        <span class="szovegek">Kognitív Disszonancia</span>
       </div>
     </header>
 
@@ -35,11 +35,11 @@
 
       <!-- -->
 
-      <div>
-        <main>
+      <main>
+      <div id="bigContainer">
           <!-- -->
           <div id="constainer_nyitoSzoveg">
-            <img src="../Images/kognitivDisszonancia.png" alt="csapat_logo">
+            <img src="../Images/CsapatLogo_Atlatszo.png" alt="csapat_logo">
             <p id="nyitoSzoveg">
               Mi vagyunk a Kognitív Disszonancia, a Ceglédi Közgazdasági És
               Informatikai Technikumból jövünk, hogy megmutathassuk Js
@@ -123,8 +123,8 @@
 
           <hr>
 
-          <h1>Galéria</h1>
-          <h2>A képek megtekintéséhez nyomja meg a gombot:)</h2>
+          <h1 id="sotetbenLevoSzovegek">Galéria</h1>
+          <h2 id="sotetbenLevoSzovegek">A képek megtekintéséhez nyomja meg a gombot:)</h2>
 
           <div id="container_kepek">
             <input
@@ -138,13 +138,14 @@
               id="gomb"
               value="Képek megnyitása"
               onclick="kovetkezoKep()"
+              class="btn"
             />
             <div id="kepnezegeto">
               <img id="kep" src="" />
             </div>
+          </div>
         </main>
-        <footer>valami</footer>
-      </div>
+      <footer>valami</footer>
     </div>
   </body>
 </html>
